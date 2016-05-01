@@ -73,12 +73,16 @@ while continue_reading:
     if status == MIFAREReader.MI_OK:
 
         # Print UID
-        print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
+        print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])+","+str(uid[4])+","+str(uid[5])
     	
 	if nState == 0:
 		nState = state_zero(0)
 	elif nState == 1:
 		nState = state_one(1)
+	elif nState == 2:
+		nState = state_one(2)
+	elif nState == 3:
+		nState = state_one(3)
 
 	print "State is "+ str(nState)
 
