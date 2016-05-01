@@ -26,6 +26,19 @@ def state_one ( int ):
 			return 0
 		return 1
 
+def state_two ( int ):
+		if uid[0] == aTagChk2[0] and uid[1] == aTagChk2[1] and uid[2] == aTagChk2[2] and uid[3] == aTagChk2[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		return 2
+
+def state_three ( int ):
+		if uid[0] == aTagChk2[0] and uid[1] == aTagChk2[1] and uid[2] == aTagChk2[2] and uid[3] == aTagChk2[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		return 3
+
+
 # Capture SIGINT for cleanup when the script is aborted
 def end_read(signal,frame):
     global continue_reading
