@@ -10,33 +10,141 @@ nState = 0
 
 # Controle tag1 initieer check
 from array import *
-aTagChk1 = array ('i', [83,74,151,1])
-aTagChk2 = array ('i', [103,74,151,1])
+aTagChkDogA = array ('i', [83,74,151,1])
+aTagChkDogB = array ('i', [103,74,151,1])
+aTagChkRoomA = array ('i', [19,74,151,1])
+aTagChkRoomB = array ('i', [103,20,151,1])
+aTagChkPatchWorkA = array ('i', [99,74,151,1])
+aTagChkPatchWorkB = array ('i', [103,20,12,1])
 
 def state_zero ( int ):
-		if uid[0] == aTagChk1[0] and uid[1] == aTagChk1[1] and uid[2] == aTagChk1[2] and uid[3] == aTagChk1[3]:
-			print "match *********************state to 1 ***********************"
+		if uid[0] == aTagChkDogA[0] and uid[1] == aTagChkDogA[1] and uid[2] == aTagChkDogA[2] and uid[3] == aTagChkDogA[3]:
+			print "match *********************state to 1: Dog A identified ***********************"
 			return 1
+		if uid[0] == aTagChkDogB[0] and uid[1] == aTagChkDogB[1] and uid[2] == aTagChkDogB[2] and uid[3] == aTagChkDogB[3]:
+			print "match *********************state to 5: Dog B identified ***********************"
+			return 5
 		return 0
 
-
 def state_one ( int ):
-		if uid[0] == aTagChk2[0] and uid[1] == aTagChk2[1] and uid[2] == aTagChk2[2] and uid[3] == aTagChk2[3]:
+		if uid[0] == aTagChkRoomA[0] and uid[1] == aTagChkRoomA[1] and uid[2] == aTagChkRoomA[2] and uid[3] == aTagChkRoomA[3]:
+			print "match *********************state to 2: Room A identified ***********************"
+			return 2
+		if uid[0] == aTagChkRoomB[0] and uid[1] == aTagChkRoomB[1] and uid[2] == aTagChkRoomB[2] and uid[3] == aTagChkRoomB[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkDogB[0] and uid[1] == aTagChkDogB[1] and uid[2] == aTagChkDogB[2] and uid[3] == aTagChkDogB[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkPatchWorkB[0] and uid[1] == aTagChkPatchWorkB[1] and uid[2] == aTagChkPatchWorkB[2] and uid[3] == aTagChkPatchWorkB[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkPatchWorkA[0] and uid[1] == aTagChkPatchWorkA[1] and uid[2] == aTagChkPatchWorkA[2] and uid[3] == aTagChkPatchWorkA[3]:
 			print "match ##############  back to zero **************************************"
 			return 0
 		return 1
 
 def state_two ( int ):
-		if uid[0] == aTagChk2[0] and uid[1] == aTagChk2[1] and uid[2] == aTagChk2[2] and uid[3] == aTagChk2[3]:
+		if uid[0] == aTagChkPatchWorkA[0] and uid[1] == aTagChkPatchWorkA[1] and uid[2] == aTagChkPatchWorkA[2] and uid[3] == aTagChkPatchWorkA[3]:
+			print "match *********************state to 3: Show the Flag A ***********************"
+			return 3
+		if uid[0] == aTagChkRoomB[0] and uid[1] == aTagChkRoomB[1] and uid[2] == aTagChkRoomB[2] and uid[3] == aTagChkRoomB[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkRoomA[0] and uid[1] == aTagChkRoomA[1] and uid[2] == aTagChkRoomA[2] and uid[3] == aTagChkRoomA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkDogB[0] and uid[1] == aTagChkDogB[1] and uid[2] == aTagChkDogB[2] and uid[3] == aTagChkDogB[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkDogA[0] and uid[1] == aTagChkDogA[1] and uid[2] == aTagChkDogA[2] and uid[3] == aTagChkDogA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkPatchWorkB[0] and uid[1] == aTagChkPatchWorkB[1] and uid[2] == aTagChkPatchWorkB[2] and uid[3] == aTagChkPatchWorkB[3]:
 			print "match ##############  back to zero **************************************"
 			return 0
 		return 2
 
 def state_three ( int ):
-		if uid[0] == aTagChk2[0] and uid[1] == aTagChk2[1] and uid[2] == aTagChk2[2] and uid[3] == aTagChk2[3]:
+		if uid[0] == aTagChkPatchWorkA[0] and uid[1] == aTagChkPatchWorkA[1] and uid[2] == aTagChkPatchWorkA[2] and uid[3] == aTagChkPatchWorkA[3]:
+			print "@@@@@@@@@@@@@@@@@@@@@  SHOW FLAG A @@@@@@@@@@@@@@@@@@@@@"
+			return 3
+		if uid[0] == aTagChkRoomB[0] and uid[1] == aTagChkRoomB[1] and uid[2] == aTagChkRoomB[2] and uid[3] == aTagChkRoomB[3]:
 			print "match ##############  back to zero **************************************"
 			return 0
-		return 3
+		if uid[0] == aTagChkRoomA[0] and uid[1] == aTagChkRoomA[1] and uid[2] == aTagChkRoomA[2] and uid[3] == aTagChkRoomA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkDogB[0] and uid[1] == aTagChkDogB[1] and uid[2] == aTagChkDogB[2] and uid[3] == aTagChkDogB[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkDogA[0] and uid[1] == aTagChkDogA[1] and uid[2] == aTagChkDogA[2] and uid[3] == aTagChkDogA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkPatchWorkB[0] and uid[1] == aTagChkPatchWorkB[1] and uid[2] == aTagChkPatchWorkB[2] and uid[3] == aTagChkPatchWorkB[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		return 0
+
+def state_five ( int ):
+		if uid[0] == aTagChkRoomB[0] and uid[1] == aTagChkRoomB[1] and uid[2] == aTagChkRoomB[2] and uid[3] == aTagChkRoomB[3]:
+			print "match *********************state to 6: Room B identified ***********************"
+			return 6
+		if uid[0] == aTagChkRoomA[0] and uid[1] == aTagChkRoomA[1] and uid[2] == aTagChkRoomA[2] and uid[3] == aTagChkRoomA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkDogA[0] and uid[1] == aTagChkDogA[1] and uid[2] == aTagChkDogA[2] and uid[3] == aTagChkDogA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkPatchWorkB[0] and uid[1] == aTagChkPatchWorkB[1] and uid[2] == aTagChkPatchWorkB[2] and uid[3] == aTagChkPatchWorkB[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkPatchWorkA[0] and uid[1] == aTagChkPatchWorkA[1] and uid[2] == aTagChkPatchWorkA[2] and uid[3] == aTagChkPatchWorkA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		return 5
+
+def state_six ( int ):
+		if uid[0] == aTagChkPatchWorkB[0] and uid[1] == aTagChkPatchWorkB[1] and uid[2] == aTagChkPatchWorkB[2] and uid[3] == aTagChkPatchWorkB[3]:
+			print "match *********************state to 7: Show the Flag B ***********************"
+			return 7
+		if uid[0] == aTagChkRoomB[0] and uid[1] == aTagChkRoomB[1] and uid[2] == aTagChkRoomB[2] and uid[3] == aTagChkRoomB[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkRoomA[0] and uid[1] == aTagChkRoomA[1] and uid[2] == aTagChkRoomA[2] and uid[3] == aTagChkRoomA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkDogB[0] and uid[1] == aTagChkDogB[1] and uid[2] == aTagChkDogB[2] and uid[3] == aTagChkDogB[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkDogA[0] and uid[1] == aTagChkDogA[1] and uid[2] == aTagChkDogA[2] and uid[3] == aTagChkDogA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkPatchWorkA[0] and uid[1] == aTagChkPatchWorkA[1] and uid[2] == aTagChkPatchWorkA[2] and uid[3] == aTagChkPatchWorkA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		return 6
+
+def state_seven ( int ):
+		if uid[0] == aTagChkPatchWorkB[0] and uid[1] == aTagChkPatchWorkB[1] and uid[2] == aTagChkPatchWorkB[2] and uid[3] == aTagChkPatchWorkB[3]:
+			print "@@@@@@@@@@@@@@@@@@@@@  SHOW FLAG B @@@@@@@@@@@@@@@@@@@@@"
+			return 7
+		if uid[0] == aTagChkRoomB[0] and uid[1] == aTagChkRoomB[1] and uid[2] == aTagChkRoomB[2] and uid[3] == aTagChkRoomB[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkRoomA[0] and uid[1] == aTagChkRoomA[1] and uid[2] == aTagChkRoomA[2] and uid[3] == aTagChkRoomA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkDogB[0] and uid[1] == aTagChkDogB[1] and uid[2] == aTagChkDogB[2] and uid[3] == aTagChkDogB[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkDogA[0] and uid[1] == aTagChkDogA[1] and uid[2] == aTagChkDogA[2] and uid[3] == aTagChkDogA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		if uid[0] == aTagChkPatchWorkA[0] and uid[1] == aTagChkPatchWorkA[1] and uid[2] == aTagChkPatchWorkA[2] and uid[3] == aTagChkPatchWorkA[3]:
+			print "match ##############  back to zero **************************************"
+			return 0
+		return 0
 
 
 # Capture SIGINT for cleanup when the script is aborted
@@ -73,16 +181,22 @@ while continue_reading:
     if status == MIFAREReader.MI_OK:
 
         # Print UID
-        print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])+","+str(uid[4])+","+str(uid[5])
+        print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
     	
 	if nState == 0:
 		nState = state_zero(0)
 	elif nState == 1:
 		nState = state_one(1)
 	elif nState == 2:
-		nState = state_one(2)
+		nState = state_two(2)
 	elif nState == 3:
-		nState = state_one(3)
+		nState = state_three(3)
+	elif nState == 5:
+		nState = state_five(5)
+	elif nState == 6:
+		nState = state_six(6)
+	elif nState == 7:
+		nState = state_seven(7)
 
 	print "State is "+ str(nState)
 
