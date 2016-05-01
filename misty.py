@@ -12,7 +12,7 @@ nState = 0
 from array import *
 aTagChkDogA = array ('i', [83,74,151,1])
 aTagChkDogB = array ('i', [103,74,151,1])
-aTagChkRoomA = array ('i', [19,74,151,1])
+aTagChkRoomA = array ('i', [102,162,107,48])
 aTagChkRoomB = array ('i', [103,20,151,1])
 aTagChkPatchWorkA = array ('i', [99,74,151,1])
 aTagChkPatchWorkB = array ('i', [103,20,12,1])
@@ -49,9 +49,6 @@ def state_two ( int ):
 			print "match *********************state to 3: Show the Flag A ***********************"
 			return 3
 		if uid[0] == aTagChkRoomB[0] and uid[1] == aTagChkRoomB[1] and uid[2] == aTagChkRoomB[2] and uid[3] == aTagChkRoomB[3]:
-			print "match ##############  back to zero **************************************"
-			return 0
-		if uid[0] == aTagChkRoomA[0] and uid[1] == aTagChkRoomA[1] and uid[2] == aTagChkRoomA[2] and uid[3] == aTagChkRoomA[3]:
 			print "match ##############  back to zero **************************************"
 			return 0
 		if uid[0] == aTagChkDogB[0] and uid[1] == aTagChkDogB[1] and uid[2] == aTagChkDogB[2] and uid[3] == aTagChkDogB[3]:
@@ -108,9 +105,6 @@ def state_six ( int ):
 		if uid[0] == aTagChkPatchWorkB[0] and uid[1] == aTagChkPatchWorkB[1] and uid[2] == aTagChkPatchWorkB[2] and uid[3] == aTagChkPatchWorkB[3]:
 			print "match *********************state to 7: Show the Flag B ***********************"
 			return 7
-		if uid[0] == aTagChkRoomB[0] and uid[1] == aTagChkRoomB[1] and uid[2] == aTagChkRoomB[2] and uid[3] == aTagChkRoomB[3]:
-			print "match ##############  back to zero **************************************"
-			return 0
 		if uid[0] == aTagChkRoomA[0] and uid[1] == aTagChkRoomA[1] and uid[2] == aTagChkRoomA[2] and uid[3] == aTagChkRoomA[3]:
 			print "match ##############  back to zero **************************************"
 			return 0
